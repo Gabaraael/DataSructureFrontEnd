@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DinoSort</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="mobile-menu-open" class="shadow-large">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+      <div id="mobile-menu-close">
+        <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+      <ul id="menu" class="shadow">
+        <li>
+          <a href="#BubbleSort">BubbleSort</a>
+        </li>
+        <li>
+          <a href="#SelectionSort">SelectionSort</a>
+        </li>
+        <li>
+          <a href="#InsertionSort">InsertionSort</a>
+        </li>
+        <li>
+          <a href="#MergeSort">MergeSort</a>
+        </li>
+        <li>
+          <a href="#QuickSort">QuickSort</a>
+        </li>
+        <li>
+          <a href="#RadixSort">RadixSort</a>
+        </li>
+        <li>
+          <a href="#ShellSort">ShellSort</a>
+        </li>
+        <li>
+          <a href="#CountSort">CountSort</a>
+        </li>
+        <li>
+          <a href="#HeapSort">HeapSort</a>
+        </li>
+        <li>
+          <a href="#BogoSort">BogoSort</a>
+        </li>
+      </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+      <div id="lead-content">
+        <h1>DinoSort</h1>
+        <h2>Ordenação pré-histórica</h2>
+        <a href="#BatteVelocity" class="btn-rounded-white">Baixar dinossauro</a>
+      </div>
+      <!-- End #lead-content -->
+
+      <div id="lead-overlay"></div>
+
+      <div id="lead-down">
+        <span>
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </span>
+      </div>
+      <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <h2 class="heading">
+            Quer saber qual deles vence em uma batalha de ordenação?
+          </h2>
+          <div
+            class="col-md-4"
+            style="display: flex; justify-content: space-between"
+          >
+            <img src="images/MelhorCaso.PNG" style="padding: 10px" />
+            <img src="images/CasoMédio.PNG" style="padding: 10px" />
+            <img src="images/PiorCaso.PNG" style="padding: 10px" />
+          </div>
+
+          <div class="col-md-8">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects" class="background-alt">
+      <h2 class="heading" id="BubbleSort">BubbleSort</h2>
+      <div class="container">
+        <div class="row">
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/bubbleSort.PNG" />
+            </div>
+            <!-- End .project-image -->
+            <div class="project-info">
+              <p>
+                O Bubble sort é um algoritmo de ordenação dentre os mais
+                simples. A ideia é percorrer o vetor diversas vezes, e a cada
+                passagem fazer flutuar para o topo o maior elemento da
+                sequência. Essa movimentação lembra a forma como as bolhas em um
+                tanque de água procuram seu próprio nível, e disso vem o nome do
+                algoritmo.
+              </p>
+            </div>
+          </div>
+
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+                   private static double bubbleSort(Integer[] vector) {
+                        int length = vector.length;
+                        int temp;
+                        Boolean ordained;
+                        Long time = System.nanoTime();
+                        for (int i = 0; i < length; i++) {
+                            ordained = true;
+                            for (int j = 1; j < (length - i); j++) {
+                                if (vector[j - 1] > vector[j]) {
+                                    temp = vector[j - 1];
+                                    vector[j - 1] = vector[j];
+                                    vector[j] = temp;
+                                    ordained = false;
+                                }
+                            }
+                            if (ordained == true) {
+                                return ((System.nanoTime() - time) * Math.pow(10, -9));
+                            }
+                        }
+                        return ((System.nanoTime() - time) * Math.pow(10, -9));
+                    }
+                </pre
+          >
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/BubbleTable.PNG" style="margin-bottom: 30px" />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: O(n)</li>
+                <li>Caso médio: O(n^2)</li>
+                <li>Pior caso: O(n^2)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="SelectionSort">SelectionSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/SelectionSort.PNG" />
+            </div>
+            <div class="project-info">
+              <p>
+                A ordenação por seleção é um algoritmo de ordenação baseado em
+                transferir o menor valor do vetor para a primeira posição,
+                depois o de segundo menor valor para a segunda posição, e assim
+                é feito sucessivamente. É composto por dois laços, um laço
+                externo e outro interno. O laço externo serve para controlar o
+                índice inicial e o interno percorre todo o vetor.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+            private static Double selectionSort(Integer vector[]) {
+                int length = vector.length;
+                Long time = System.nanoTime();
+        
+                for (int i = 0; i < length - 1; i++) {
+                    int min = i;
+                    for (int j = i + 1; j < length; j++)
+                        if (vector[j] < vector[min]) min = j;
+        
+                    Integer temp = vector[min];
+                    vector[min] = vector[i];
+                    vector[i] = temp;
+                }
+                return ((System.nanoTime() - time) * Math.pow(10, -9));
+            }
+         </pre
+          >
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/SelectionSortTable.PNG"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: O(n^2)</li>
+                <li>Caso médio: O(n^2)</li>
+                <li>Pior caso: O(n^2)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="InsertionSort">InsertionSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/InsertionSort.PNG" />
+            </div>
+            <div class="project-info">
+              <p>
+                A ordenação por seleção é um algoritmo de ordenação baseado em
+                transferir o menor valor do vetor para a primeira posição,
+                depois o de segundo menor valor para a segunda posição, e assim
+                é feito sucessivamente. É composto por dois laços, um laço
+                externo e outro interno. O laço externo serve para controlar o
+                índice inicial e o interno percorre todo o vetor.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+            private static Double insertionSort(Integer array[]) {
+                int length = array.length;
+                Long time = System.nanoTime();
+                for (int j = 1; j < length; j++) {
+                    int key = array[j];
+                    int i = j - 1;
+                    while ((i > -1) && (array[i] > key)) {
+                        array[i + 1] = array[i];
+                        i--;
+                    }
+                    array[i + 1] = key;
+                }
+                return ((System.nanoTime() - time) * Math.pow(10, -9));
+            }        
+         </pre
+          >
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/InsertionSortTable.PNG"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: O(n)</li>
+                <li>Caso médio: O(n^2)</li>
+                <li>Pior caso: O(n^2)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="MergeSort">MergeSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/MergeSort.png" />
+            </div>
+            <div class="project-info">
+              <p>
+                Merge Sort é um algoritmo eficiente de ordenação por divisão e
+                conquista. Sua ideia básica consiste em subdividir um arranjo em
+                sub-arranjos recursivamente e posteriormente unir os
+                sub-arranjos.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+            private static double mergeSort(Integer[] vetor) {
+                Long time = System.nanoTime();
+                int tamanho = vetor.length;
+                int elementos = 1;
+                int inicio, meio, fim;
+        
+                while (elementos < tamanho) {
+                    inicio = 0;
+                    while (inicio + elementos < tamanho) {
+                        meio = inicio + elementos;
+                        fim = inicio + 2 * elementos;
+        
+                        if (fim > tamanho) fim = tamanho;
+        
+                        intercala(vetor, inicio, meio, fim);
+                        inicio = fim;
+                    }
+        
+                    elementos = elementos * 2;
+                }
+                return ((System.nanoTime() - time) * Math.pow(10, -9));
+            }
+        
+            private static void intercala(Integer[] vetor, int inicio, int meio, int fim) {
+                int novoVetor[] = new int[fim - inicio];
+                int i = inicio;
+                int m = meio;
+                int pos = 0;
+                while (i < meio && m < fim) {
+                    if (vetor[i] <= vetor[m]) {
+                        novoVetor[pos] = vetor[i];
+                        pos = pos + 1;
+                        i = i + 1;
+                    } else {
+                        novoVetor[pos] = vetor[m];
+                        pos = pos + 1;
+                        m = m + 1;
+                    }
+                }
+                while (i < meio) {
+                    novoVetor[pos] = vetor[i];
+                    pos = pos + 1;
+                    i = i + 1;
+                }
+        
+                while (m < fim) {
+                    novoVetor[pos] = vetor[m];
+                    pos = pos + 1;
+                    m = m + 1;
+                }
+        
+                for (pos = 0, i = inicio; i < fim; i++, pos++) {
+                    vetor[i] = novoVetor[pos];
+                }
+            }
+         </pre
+          >
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/MergeSortTable.PNG"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: Θ(n∗log n)</li>
+                <li>Caso médio: Θ(n∗log n)</li>
+                <li>Pior caso: Θ(n∗log n)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="QuickSort">QuickSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/QuickSort.png" />
+            </div>
+            <div class="project-info">
+              <p>
+                O quicksort atribui sua eficiência a estratégia de divisão e
+                conquista. A estratégia consiste em rearranjar as chaves de modo
+                que as chaves "menores" precedam as chaves "maiores". Em seguida
+                o quicksort ordena as duas sublistas de chaves menores e maiores
+                recursivamente até que a lista completa se encontre ordenada.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+          
+        public static double quickSort(Integer[] a) {
+            Long time = System.nanoTime();
+            sort(a, 0, a.length - 1);
+            return ((System.nanoTime() - time) * Math.pow(10, -9));
+        }
+    
+        public static int pivot(Integer[] a, int lo, int hi){
+            int mid = (lo+hi)/2;
+            int pivot = a[lo] + a[hi] + a[mid] - Math.min(Math.min(a[lo], a[hi]), a[mid]) - Math.max(Math.max(a[lo], a[hi]), a[mid]);
+    
+            if(pivot == a[lo])
+                return lo;
+            else if(pivot == a[hi])
+                return hi;
+            return mid;
+        }
+    
+        public static int partition(Integer[] a, int lo, int hi){
+    
+            int k = pivot(a, lo, hi);
+            swapPart(a, lo, k);
+            //System.out.println(a);
+            int j = hi + 1;
+            int i = lo;
+            while(true){
+    
+                while(a[lo] < a[--j])
+                    if(j==lo)   break;
+    
+                while(a[++i] < a[lo])
+                    if(i==hi) break;
+    
+                if(i >= j)  break;
+                swap(a, i, j);
+            }
+            swapPart(a, lo, j);
+            return j;
+        }
+    
+        public static void sort(Integer[] a, int lo, int hi){
+            if(hi<=lo)  return;
+            int p = partition(a, lo, hi);
+            sort(a, lo, p-1);
+            sort(a, p+1, hi);
+        }
+    
+        public static void swapPart(Integer[] a, int b, int c){
+            int swap = a[b];
+            a[b] = a[c];
+            a[c] = swap;
+        }
+        
+       </pre
+          >
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/QuickSortTable.PNG"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: Θ(n∗log n)</li>
+                <li>Caso médio: O(n2)</li>
+                <li>Pior caso: O(n2)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="RadixSort">RadixSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/RadixSort.png" />
+            </div>
+            <div class="project-info">
+              <p>
+                O Radix sort é um algoritmo de ordenação rápido e estável que
+                pode ser usado para ordenar itens que estão identificados por
+                chaves únicas. Cada chave é uma cadeia de caracteres ou número,
+                e o radix sort ordena estas chaves em qualquer ordem relacionada
+                com a lexicografia.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+         
+    private static Double radixSort(Integer array[]) {
+        Long time = System.nanoTime();
+        int size = array.length;
+        int max = getMax(array, size);
+
+        for (int place = 1; max / place > 0; place *= 10)
+            countingSort(array, size, place);
+
+        return ((System.nanoTime() - time) * Math.pow(10, -9));
+    }
+    private static void countingSort(Integer array[], int size, int place) {
+        int[] output = new int[size + 1];
+        int max = array[0];
+        for (int i = 1; i < size; i++) {
+            if (array[i] > max)
+                max = array[i];
+        }
+        int[] count = new int[max + 1];
+
+        for (int i = 0; i < max; ++i)
+            count[i] = 0;
+
+        for (int i = 0; i < size; i++)
+            count[(array[i] / place) % 10]++;
+
+        for (int i = 1; i < 10; i++)
+            count[i] += count[i - 1];
+
+        for (int i = size - 1; i >= 0; i--) {
+            output[count[(array[i] / place) % 10] - 1] = array[i];
+            count[(array[i] / place) % 10]--;
+        }
+
+        for (int i = 0; i < size; i++)
+            array[i] = output[i];
+    }
+    private static int getMax(Integer array[], int n) {
+        int max = array[0];
+        for (int i = 1; i < n; i++)
+            if (array[i] > max)
+                max = array[i];
+        return max;
+    }
+       </pre
+          >
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/RadixSortTable.png"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: Θ(n)</li>
+                <li>Caso médio: Θ(n)</li>
+                <li>Pior caso: Θ(n)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="ShellSort">ShellSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/ShellSort.PNG" />
+            </div>
+            <div class="project-info">
+              <p>
+                o método Shell Sort é uma extensão do algoritmo de ordenação por
+                inserção. Ele permite a troca de registros distantes um do
+                outro, diferente do algoritmo de ordenação por inserção que
+                possui a troca de itens adjacentes para determinar o ponto de
+                inserção. A complexidade do algoritmo é desconhecida, ninguém
+                ainda foi capaz de encontrar uma fórmula fechada para sua função
+                de complexidade e o método não é estável.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+        private static Double shellSort(Integer[] vet) {
+            Long time = System.nanoTime();
+            int size = vet.length;
+            int i , j , value;
+            int gap = 1;
+            while(gap < size) {
+                gap = 3*gap+1;
+            }
+            while ( gap > 1) {
+                gap /= 3;
+                for(i = gap; i < size; i++) {
+                    value = vet[i];
+                    j = i - gap;
+                    while (j >= 0 && value < vet[j]) {
+                        vet [j + gap] = vet[j];
+                        j -= gap;
+                    }
+                    vet [j + gap] = value;
+                }
+            }
+            return ((System.nanoTime() - time) * Math.pow(10, -9));
+        }
+       </pre
+          >
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/ShellSortTabke.PNG"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade - Teorema de Poonen.</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: O(n*log n)</li>
+                <li>Caso médio: O(n*log n)</li>
+                <li>Pior caso: O(n^2)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="CountSort">CountSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/CountSort.PNG" />
+            </div>
+            <div class="project-info">
+              <p>
+                A ideia básica do counting sort é determinar, para cada entrada
+                x, o número de elementos menor que x. Essa informação pode ser
+                usada para colocar o elemento x diretamente em sua posição no
+                array de saída.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+        static double countSort(Integer[] array) {
+        Long time = System.nanoTime();
+        int size = array.length;
+        int[] output = new int[size + 1];
+
+        int max = array[0];
+        for (int i = 1; i < size; i++) {
+            if (array[i] > max)
+                max = array[i];
+        }
+        int[] count = new int[max + 1];
+
+        for (int i = 0; i < max; ++i) {
+            count[i] = 0;
+        }
+
+        for (int i = 0; i < size; i++) {
+            count[array[i]]++;
+        }
+
+        for (int i = 1; i <= max; i++) {
+            count[i] += count[i - 1];
+        }
+
+        for (int i = size - 1; i >= 0; i--) {
+            output[count[array[i]] - 1] = array[i];
+            count[array[i]]--;
+        }
+
+        for (int i = 0; i < size; i++) {
+            array[i] = output[i];
+        }
+        return ((System.nanoTime() - time) * Math.pow(10, -9));
+    }
+       </pre
+          >
+
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/CountSortTable.PNG"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: O(n)</li>
+                <li>Caso médio: O(n)</li>
+                <li>Pior caso: O(n)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+
+          <h2 class="heading" id="HeapSort">HeapSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/HeapSort.PNG" />
+            </div>
+            <div class="project-info">
+              <p>
+                O heapsort utiliza uma estrutura de dados chamada heap, para
+                ordenar os elementos à medida que os insere na estrutura. Assim,
+                ao final das inserções, os elementos podem ser sucessivamente
+                removidos da raiz da heap, na ordem desejada, lembrando-se
+                sempre de manter a propriedade de max-heap.
+              </p>
+            </div>
+          </div>
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+        private static boolean isSorted(Integer[] a) {
+            for (int i = 1; i < a.length; i++)
+                if (a[i] < a[i - 1])
+                    return false;
+            return true;
+        }
+    
+        private static void heapify(Integer arr[], int size, int index) {
+            int  maximum = index;
+            int leftChild = 2*index + 1;
+            int rightChild = 2*index + 2;
+            int swapper;
+    
+            if(leftChild < size && arr[leftChild] > arr[maximum]){
+                maximum = leftChild;
+            }
+            if(rightChild < size && arr[rightChild] > arr[maximum]){
+                maximum = rightChild;
+            }
+    
+            if(maximum != index){
+                swapper = arr[index];
+                arr[index] = arr[maximum];
+                arr[maximum] = swapper;
+                heapify(arr,size,maximum);
+            }
+        }
+    
+        private static double heapSort(Integer array[]) {
+            Long time = System.nanoTime();
+            int size = array.length;
+            int swapper;
+    
+            int index = (size/2) - 1;
+            while(index >=0){
+                heapify(array,size,index);
+                index--;
+            }
+    
+            for(index = size -1; index > 0; index--) {
+                swapper = array[0];
+                array[0] = array[index];
+                array[index] = swapper;
+                heapify(array,index, 0);
+            }
+            return ((System.nanoTime() - time) * Math.pow(10, -9));
+        }
+       </pre
+          >
+
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img
+                src="images/HeapSortTable.PNG"
+                style="margin-bottom: 30px"
+              />
+            </div>
+            <div>
+              <p style="color: #3498db">Complexidade</p>
+              <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+                <li>Melhor caso: O(n)</li>
+                <li>Caso médio: O(n * lg n)</li>
+                <li>Pior caso: O(n * lg n)</li>
+              </ul>
+              <div class="project-info"></div>
+            </div>
+          </div>
+          
+          <h2 class="heading" id="BogoSort">BogoSort</h2>
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="images/BogoSort.PNG" />
+            </div>
+            <div class="project-info">
+              <p>
+                BogoSort é um algoritmo de ordenação extremamente ineficiente. É
+                baseado na reordenação aleatória dos elementos. Não é utilizado
+                na prática, mas pode ser usado no ensino de algoritmos mais
+                eficientes.
+              </p>
+            </div>
+          </div>
+
+          <pre
+            class="s-code-block language-java"
+            ,
+            style="text-align: left; color: rebeccapurple"
+          >
+        static double bogoSort(Integer[] a) {
+        Long time = System.nanoTime();
+        while (isSorted(a) == false)
+            shuffle(a); 
+        return ((System.nanoTime() - time) * Math.pow(10, -9));
+    }
+
+    private static void shuffle(Integer[] a) {
+        for (int i = 0; i < a.length; i++)
+            swap(a, i, (int)(Math.random() * i));
+    }
+
+    private static void swap(Integer[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+       </pre
+          >
+        </div>
+      </div>
+      <div class="project shadow-large">
+        <div class="project-image">
+          <img
+            src="images/BogoSortTable.PNG"
+            style="margin-bottom: 30px"
+          />
+        </div>
+        <div>
+          <p style="color: #3498db">Complexidade</p>
+          <ul style="color: #74808a; list-style: none; font-size: 0.9em">
+            <li>Melhor caso: O(n) </li>
+            <li>Caso médio: O(n! * n))</li>
+            <li>Pior caso: O(∞)</li>
+          </ul>
+          <div class="project-info"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 copyright">
+            <p>
+              Copyright &copy;
+              <span id="current-year">Dinossauria</span> Jurássica
+            </p>
+          </div>
+          <div class="col-sm-2 top">
+            <span id="to-top">
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="col-sm-5 social">
+            <ul>
+              <li>
+                <a href="https://github.com/" target="_blank"
+                  ><i class="fa fa-github" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/" target="_blank"
+                  ><i class="fa fa-stack-overflow" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/" target="_blank"
+                  ><i class="fa fa-linkedin" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/" target="_blank"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/" target="_blank"
+                  ><i class="fa fa-twitter" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/" target="_blank"
+                  ><i class="fa fa-google-plus" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+  </body>
+</html>
